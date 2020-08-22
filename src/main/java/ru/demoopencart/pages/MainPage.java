@@ -1,15 +1,20 @@
 package ru.demoopencart.pages;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
-    String MENU_CONTAINER_XPATH = "//nav[@class='navbar']";
-    String RECOMMENDED_CONTAINER_XPATH = "//div[contains(@class,'product-layout')]/parent::div[@class='row']";
+    private final String MENU_CONTAINER_XPATH = "//nav[@class='navbar']";
+    private final String RECOMMENDED_BLOCK_XPATH = "//div[contains(@class,'product-layout')]";
 
-    SelenideElement menuContainer = $x(MENU_CONTAINER_XPATH);
-    SelenideElement recommendedContainer = $x(RECOMMENDED_CONTAINER_XPATH);
+    @Getter
+    private SelenideElement menuContainer = $x(MENU_CONTAINER_XPATH);
+    @Getter
+    private ElementsCollection recommendedBlock = $$x(RECOMMENDED_BLOCK_XPATH);
+
 
 
     public SelenideElement getSectionMenuByText( String textMenu ) {

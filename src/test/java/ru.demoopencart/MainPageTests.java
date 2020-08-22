@@ -19,4 +19,11 @@ public class MainPageTests extends BaseTest {
         new MainPageSteps()
                 .checkTitle("Your Store");
     }
+
+    @Test(description = "")
+    public void test1() {
+        new MainPageSteps()
+                .checkCountElements(4);
+    }
+
 }
