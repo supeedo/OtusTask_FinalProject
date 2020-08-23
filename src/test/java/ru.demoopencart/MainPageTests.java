@@ -40,8 +40,7 @@ public class MainPageTests extends BaseTest {
     public void checkSearch(){
         new MainPageSteps()
                 .sendTextInSearchField("imac")
-        .checkTitle("Search - imac")
-        ;
+        .checkTitle("Search - imac");
     }
 
 }
