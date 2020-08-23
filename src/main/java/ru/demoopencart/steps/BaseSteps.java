@@ -6,6 +6,9 @@ import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.demoopencart.base.BasePage;
+import ru.demoopencart.pages.components.Header;
+import ru.demoopencart.pages.components.LeftColumn;
+import ru.demoopencart.pages.components.MainMenu;
 
 import static com.codeborne.selenide.Selenide.title;
 
@@ -17,6 +20,7 @@ import static com.codeborne.selenide.Selenide.title;
 
 public class BaseSteps<P> {
 
+
     @Step("Check title with expected")
     public P checkTitle( String titleExpected ) {
         Assert.assertEquals(title(), titleExpected, "title not the same with expected");
@@ -25,17 +29,17 @@ public class BaseSteps<P> {
 
     @Step
     public P useMainMenuByText( String textMenuButton ) {
-        BasePage page = new BasePage();
-        page.getSectionMenuByText(textMenuButton).click();
+        MainMenu menu = new MainMenu();
+        menu.getSectionMenuByText(textMenuButton).click();
         return (P) this;
     }
 
     @Step
     public P useMainMenuWithSubbuttonByText( String textMenuButton, String textSubMenuButton ) {
-        BasePage page = new BasePage();
-        SelenideElement button = page.getSectionMenuByText(textMenuButton);
+        MainMenu menu = new MainMenu();
+        SelenideElement button = menu.getSectionMenuByText(textMenuButton);
         button.click();
-        SelenideElement subbutton = page.getSubbuttonFromMainMenuByText(button, textSubMenuButton);
+        SelenideElement subbutton = menu.getSubbuttonFromMainMenuByText(button, textSubMenuButton);
         if (subbutton.exists()) {
             subbutton.click();
         } else {
@@ -47,16 +51,24 @@ public class BaseSteps<P> {
 
     @Step
     public P checkBusketText( String textBasket ) {
-        BasePage page = new BasePage();
-        Assert.assertEquals(page.getBasket().getText(), textBasket, "text does not converge with expected");
+        Header header = new Header();
+        Assert.assertEquals(header.getBasket().getText(), textBasket, "text does not converge with expected");
         return (P) this;
     }
 
     @Step
     public P sendTextInSearchField( String text ) {
-        BasePage page = new BasePage();
-        page.getSearchField().sendKeys(text);
-        page.getSearchField().pressEnter();
+        Header header = new Header();
+        header.getSearchField().sendKeys(text);
+        header.getSearchField().pressEnter();
+        return (P) this;
+    }
+
+    @Step
+    public P useLeftMenuByText( String textButton ) {
+        LeftColumn column = new LeftColumn();
+        column.updateCollection();
+        column.getButtonCollection().get(textButton).click();
         return (P) this;
     }
 }

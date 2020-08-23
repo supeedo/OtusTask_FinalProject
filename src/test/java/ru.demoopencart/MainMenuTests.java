@@ -13,7 +13,7 @@ import ru.demoopencart.steps.MainPageSteps;
  * а так же отработки перехода в соответствующую страницу.
  */
 
-@Epic("Main Page")
+@Epic("Menu test")
 @Feature("Working main menu button")
 @Story("Smoke")
 @Owner("Yakovlev Sergey")
