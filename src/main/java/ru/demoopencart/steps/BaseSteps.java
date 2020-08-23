@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.demoopencart.base.BasePage;
 import ru.demoopencart.pages.components.Header;
+import ru.demoopencart.pages.components.LeftColumn;
 import ru.demoopencart.pages.components.MainMenu;
 
 import static com.codeborne.selenide.Selenide.title;
@@ -60,6 +61,14 @@ public class BaseSteps<P> {
         Header header = new Header();
         header.getSearchField().sendKeys(text);
         header.getSearchField().pressEnter();
+        return (P) this;
+    }
+
+    @Step
+    public P useLeftMenuByText( String textButton ) {
+        LeftColumn column = new LeftColumn();
+        column.updateCollection();
+        column.getButtonCollection().get(textButton).click();
         return (P) this;
     }
 }
