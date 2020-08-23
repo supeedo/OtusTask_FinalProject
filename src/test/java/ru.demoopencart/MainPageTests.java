@@ -9,7 +9,7 @@ import ru.demoopencart.base.BaseTest;
 import ru.demoopencart.steps.MainPageSteps;
 
 @Epic("Main Page")
-@Feature("")
+@Feature("Test main page")
 @Story("Smoke")
 @Owner("Yakovlev Sergey")
 public class MainPageTests extends BaseTest {

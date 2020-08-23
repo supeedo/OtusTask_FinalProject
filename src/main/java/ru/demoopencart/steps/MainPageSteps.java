@@ -32,6 +32,7 @@ public class MainPageSteps extends BaseStep<MainPageSteps> {
         return this;
     }
 
+    @Step
     public MainPageSteps checkCountElements( int expectedCount ) {
         Assert.assertEquals(page.getRecommendedBlock().size(), expectedCount);
         return this;
