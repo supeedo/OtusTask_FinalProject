@@ -8,20 +8,24 @@ import org.testng.annotations.Test;
 import ru.demoopencart.base.BaseTest;
 import ru.demoopencart.steps.MainPageSteps;
 
+/**
+ * Тест-класс по тестированию различных элементов главной страницы.
+ */
+
 @Epic("Main Page")
-@Feature("Test main page")
+@Feature("Test elements in main page")
 @Story("Smoke")
 @Owner("Yakovlev Sergey")
 public class MainPageTests extends BaseTest {
 
-    @Test(description = "")
-    public void test() {
+    @Test(description = "Enter on Main page and check Title")
+    public void checkTitleOnMainPage() {
         new MainPageSteps()
                 .checkTitle("Your Store");
     }
 
-    @Test(description = "")
-    public void test1() {
+    @Test(description = "Check count elements on block 'Recommended' on page")
+    public void checkCountElementsOnRecommendedBlock() {
         new MainPageSteps()
                 .checkCountElements(4);
     }

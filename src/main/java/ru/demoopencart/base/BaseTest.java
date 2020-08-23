@@ -25,7 +25,6 @@ public class BaseTest {
             holdBrowserOpen = true;
             open(baseUrl);
         } else {
-
             Configuration.remote = "http://localhost:4444/wd/hub";
             Configuration.browser = "chrome";
             Configuration.browserSize = "1920x1080";
