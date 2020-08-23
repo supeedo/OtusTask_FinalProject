@@ -4,20 +4,22 @@ package ru.demoopencart.steps;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import ru.demoopencart.base.BasePage;
 
 import static com.codeborne.selenide.Selenide.title;
 
 /**
- *  Класс с базовыми степами, доступ к взаимодействию с которыми имею все остальные Классы степов
+ * Класс с базовыми степами, доступ к взаимодействию с которыми имею все остальные Классы степов
  * , наследуемые от базового. По логике, в данном классе лежат методы обращающиеся к элементам
- *  доступные на всех страницах сайта.
+ * доступные на всех страницах сайта.
  */
 
-public class BaseStep<P> {
+public class BaseSteps<P> {
 
+    @Step("Check title with expected")
     public P checkTitle( String titleExpected ) {
-        Assert.assertEquals(title(), titleExpected);
+        Assert.assertEquals(title(), titleExpected, "title not the same with expected");
         return (P) this;
     }
 
@@ -43,4 +45,18 @@ public class BaseStep<P> {
         return (P) this;
     }
 
+    @Step
+    public P checkBusketText( String textBasket ) {
+        BasePage page = new BasePage();
+        Assert.assertEquals(page.getBasket().getText(), textBasket, "text does not converge with expected");
+        return (P) this;
+    }
+
+    @Step
+    public P sendTextInSearchField( String text ) {
+        BasePage page = new BasePage();
+        page.getSearchField().sendKeys(text);
+        page.getSearchField().pressEnter();
+        return (P) this;
+    }
 }

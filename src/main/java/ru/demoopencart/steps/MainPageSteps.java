@@ -8,7 +8,7 @@ import ru.demoopencart.pages.MainPage;
  * Step-класс с элементами и их обработкой, доступные на главной (Main) странице сайта.
  */
 
-public class MainPageSteps extends BaseStep<MainPageSteps> {
+public class MainPageSteps extends BaseSteps<MainPageSteps> {
     MainPage page;
 
     public MainPageSteps() {

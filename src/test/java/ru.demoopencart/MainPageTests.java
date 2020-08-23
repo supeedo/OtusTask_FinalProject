@@ -30,4 +30,18 @@ public class MainPageTests extends BaseTest {
                 .checkCountElements(4);
     }
 
+    @Test(description = "")
+    public void checkBasket(){
+        new MainPageSteps()
+                .checkBusketText("0 item(s) - 0.00руб.");
+    }
+
+    @Test(description = "")
+    public void checkSearch(){
+        new MainPageSteps()
+                .sendTextInSearchField("imac")
+        .checkTitle("Search - imac")
+        ;
+    }
+
 }

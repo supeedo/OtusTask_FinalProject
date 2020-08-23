@@ -15,12 +15,16 @@ import static com.codeborne.selenide.Selenide.$x;
 public class BasePage {
     private final String MENU_CONTAINER_XPATH = "//nav[@class='navbar']";
     private final String BASKET_XPATH = "//button[@type='button']/span[@id='cart-total']";
+    private final String SEARCH_FIELD_XPATCH = "//div[@id='search']/input";
 
     @Getter
-    SelenideElement menuContainer = $x(MENU_CONTAINER_XPATH);
+    private SelenideElement menuContainer = $x(MENU_CONTAINER_XPATH);
 
     @Getter
-    SelenideElement basket = $x(BASKET_XPATH);
+    private SelenideElement basket = $x(BASKET_XPATH);
+
+    @Getter
+    private SelenideElement searchField = $x(SEARCH_FIELD_XPATCH);
 
     @Step
     public SelenideElement getSectionMenuByText( String textMenu ) {

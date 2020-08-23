@@ -18,28 +18,36 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         if (LOCALE) {
-            baseUrl = "http://demo-opencart.ru";
-            browser = "chrome";
-            startMaximized = true;
-            timeout = 15000;
-            holdBrowserOpen = true;
-            open(baseUrl);
+            setUpLocaleTests();
         } else {
-            Configuration.remote = "http://localhost:4444/wd/hub";
-            Configuration.browser = "chrome";
-            Configuration.browserSize = "1920x1080";
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
+            setUpRemoteTests();
         }
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void close() {
         if (Objects.nonNull(WebDriverRunner.getWebDriver())) {
             WebDriverRunner.getWebDriver().quit();
         }
+    }
+
+    public void setUpLocaleTests(){
+        baseUrl = "http://demo-opencart.ru";
+        browser = "chrome";
+        startMaximized = true;
+        timeout = 15000;
+        holdBrowserOpen = true;
+        open(baseUrl);
+    }
+
+    public void setUpRemoteTests(){
+        Configuration.remote = "http://localhost:4444/wd/hub";
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
 }
