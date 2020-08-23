@@ -6,7 +6,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class BasePage {
     String MENU_CONTAINER_XPATH = "//nav[@class='navbar']";
-
     SelenideElement menuContainer = $x(MENU_CONTAINER_XPATH);
 
 
