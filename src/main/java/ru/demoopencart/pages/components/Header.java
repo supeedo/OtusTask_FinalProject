@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$x;
 public class Header {
 
     private final String CONTAINER_HEADER = "//header/div[@class='container']";
-    private final String BASKET_XPATH = "//button[@type='button']/span[@id='cart-total']";
-    private final String SEARCH_FIELD_XPATH = "//div[@id='search']/input";
+    private final String BASKET_XPATH = ".//button[@type='button']/span[@id='cart-total']";
+    private final String SEARCH_FIELD_XPATH = ".//div[@id='search']/input";
 
     private SelenideElement container_header = $x(CONTAINER_HEADER);
 
