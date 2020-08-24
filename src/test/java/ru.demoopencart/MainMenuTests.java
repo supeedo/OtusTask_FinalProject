@@ -5,7 +5,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import ru.demoopencart.driver.BaseTest;
+import ru.demoopencart.driver.InitDriver;
 import ru.demoopencart.steps.MainPageSteps;
 
 /**
@@ -17,7 +17,7 @@ import ru.demoopencart.steps.MainPageSteps;
 @Feature("Working main menu button")
 @Story("Smoke")
 @Owner("Yakovlev Sergey")
-public class MainMenuTests extends BaseTest {
+public class MainMenuTests extends InitDriver {
 
 
     @Test(description = "Check working menu button 'Desktops', with a sub-button 'PC'")

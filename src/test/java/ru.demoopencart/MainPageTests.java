@@ -5,7 +5,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-import ru.demoopencart.driver.BaseTest;
+import ru.demoopencart.driver.InitDriver;
 import ru.demoopencart.steps.MainPageSteps;
 
 /**
@@ -16,7 +16,7 @@ import ru.demoopencart.steps.MainPageSteps;
 @Feature("Test elements in main page")
 @Story("Smoke")
 @Owner("Yakovlev Sergey")
-public class MainPageTests extends BaseTest {
+public class MainPageTests extends InitDriver {
 
     @Test(description = "Enter on Main page and check Title")
     public void checkTitleOnMainPage() {

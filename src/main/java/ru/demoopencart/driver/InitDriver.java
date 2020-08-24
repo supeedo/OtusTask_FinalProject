@@ -4,6 +4,7 @@ package ru.demoopencart.driver;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.util.Objects;
@@ -11,7 +12,7 @@ import java.util.Objects;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
 
-public class BaseTest {
+public class InitDriver {
     private final boolean LOCALE = true;
 
     @BeforeMethod
@@ -23,7 +24,7 @@ public class BaseTest {
         }
     }
 
-    //@AfterMethod
+    @AfterMethod
     public void close() {
         if (Objects.nonNull(WebDriverRunner.getWebDriver())) {
             WebDriverRunner.getWebDriver().quit();
