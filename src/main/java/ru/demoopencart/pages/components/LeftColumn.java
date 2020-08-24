@@ -23,8 +23,8 @@ public class LeftColumn {
     public void updateCollection() {
         buttonCollection = new HashMap<>();
         allVisibleButtons.forEach(x -> {
-            System.out.println(x.getText());
-            buttonCollection.put(x.getText(), x);
+          String buf=  x.getText().replaceAll("\\(\\d*\\)|[-]","" ).trim();
+            buttonCollection.put(buf, x);
         });
     }
 

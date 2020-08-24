@@ -1,10 +1,9 @@
-package ru.demoopencart.base;
+package ru.demoopencart.driver;
 
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.util.Objects;
