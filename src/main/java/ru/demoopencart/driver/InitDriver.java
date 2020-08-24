@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class InitDriver {
-    private final boolean LOCALE = false;
+    private final boolean LOCALE = true;
 
     @BeforeMethod
     public void setup() {
@@ -22,6 +22,7 @@ public class InitDriver {
         } else {
             setUpRemoteTests();
         }
+        open(baseUrl);
     }
 
     @AfterMethod
@@ -37,7 +38,6 @@ public class InitDriver {
         startMaximized = true;
         timeout = 15000;
         holdBrowserOpen = true;
-        open(baseUrl);
     }
 
     public void setUpRemoteTests(){

@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 import ru.demoopencart.driver.InitDriver;
 import ru.demoopencart.steps.MainPageSteps;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
+
 /**
  * Тест-класс по тестированию различных элементов главной страницы.
  */
