@@ -2,7 +2,6 @@ package ru.demoopencart.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import lombok.Getter;
-import ru.demoopencart.base.BasePage;
 
 import static com.codeborne.selenide.Selenide.$$x;
 

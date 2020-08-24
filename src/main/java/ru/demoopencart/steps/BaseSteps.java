@@ -4,8 +4,6 @@ package ru.demoopencart.steps;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-import ru.demoopencart.base.BasePage;
 import ru.demoopencart.pages.components.Header;
 import ru.demoopencart.pages.components.LeftColumn;
 import ru.demoopencart.pages.components.MainMenu;

@@ -1,4 +1,4 @@
-package ru.demoopencart.base;
+package ru.demoopencart.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
