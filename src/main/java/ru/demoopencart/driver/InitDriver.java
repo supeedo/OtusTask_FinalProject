@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class InitDriver {
-    private final boolean LOCALE = false;
+    private final boolean LOCALE = true;
 
     @BeforeMethod
     public void setup() {
