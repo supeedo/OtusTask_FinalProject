@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class InitDriver {
-    private final boolean LOCALE = true;
+    private final boolean LOCALE = false;
 
     @BeforeMethod
     public void setup() {
@@ -41,8 +41,9 @@ public class InitDriver {
     }
 
     public void setUpRemoteTests(){
+        baseUrl = "http://demo-opencart.ru";
         remote = "http://localhost:4444/wd/hub";
-        browser = "chrome";
+        Configuration.browser = "chrome";
         browserVersion = "84";
         browserSize = "1920x1080";
         DesiredCapabilities capabilities = new DesiredCapabilities();
